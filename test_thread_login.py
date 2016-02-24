@@ -19,7 +19,7 @@ def test_login():
     if _DEBUG:
         import pdb
         pdb.set_trace()
-    handle = login.login('ssh', 'root', 'nsfocus', '10.20.60.23')
+    handle = login.login('ssh', 'root', 'n', '10.20.60.23')
     #handle.execute_cmd('uname -a')
     task = (handle.execute_cmd, ('uname -a',), {})
     work_queue = Queue()
@@ -35,7 +35,7 @@ def test_login():
 def test_thread_pool():
     pool = ThreadPool(2, 0.5)
     for i in range(2):
-        handle = login.login('ssh', 'root', 'nsfocus', '10.20.60.23')
+        handle = login.login('ssh', 'root', 'n', '10.20.60.23')
         task = (handle.execute_cmd, ('uname -a',), {})
         pool.add_task(task)
     print pool.get_result()
