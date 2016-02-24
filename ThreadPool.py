@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 #coding=utf-8
-#author liaoxinxi@nsfocus.com
 
 from Queue import Queue,Empty
 from threading import Thread
